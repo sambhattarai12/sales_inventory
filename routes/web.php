@@ -27,12 +27,8 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
 
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('employee', 'EmployeeController');
-    // Route::resource('customer', 'CustomerController');
-    // Route::resource('attendance', 'AttendanceController');
-    // Route::put('attendance/{attendance?}', 'AttendanceController@att_update')->name('attendance.att_update');
-    // Route::resource('supplier', 'SupplierController');
-    // Route::resource('advanced_salary', 'AdvancedSalaryController');
-    // Route::resource('salary', 'SalaryController');
+    Route::resource('customer', 'CustomerController');
+    Route::resource('supplier', 'SupplierController');
     Route::resource('category', 'CategoryController');
     Route::resource('product', 'ProductController');
     // Route::resource('expense', 'ExpenseController');
@@ -40,8 +36,8 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
     // Route::get('expense-month/{month?}', 'ExpenseController@month_expense')->name('expense.month');
     // Route::get('expense-yearly/{year?}', 'ExpenseController@yearly_expense')->name('expense.yearly');
 
-    // Route::get('setting', 'SettingController@index')->name('setting.index');
-    // Route::put('setting/{id}', 'SettingController@update')->name('setting.update');
+    Route::get('setting', 'SettingController@index')->name('setting.index');
+    Route::put('setting/{id}', 'SettingController@update')->name('setting.update');
 
     // Route::resource('pos', 'PosController');
 
